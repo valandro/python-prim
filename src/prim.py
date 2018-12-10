@@ -3,10 +3,11 @@ import re
 
 file = open(argv[1], "r")
 # n = number of nodes
-n = 99
-# m = number of arrests
-m = 99
-graph = [[] * m] * n
+nodes = 9
+# m = number of arrests per node
+arrests = (nodes - 1)
+# Initialize graph array
+graph = [[] * arrests] * nodes
 # [[{'2', '5'}],[{'1', '6'}]]
 # Each position of list is the node, and the structure is 'key' == node and 'value' == distance
 # Reading all file into a arrays of arrays
@@ -22,3 +23,5 @@ for line in file:
             graph[int(info[0])].append(arrest)
         else:
             graph[int(info[0])].append(arrest)
+
+print(graph)
