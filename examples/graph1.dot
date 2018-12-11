@@ -1,15 +1,15 @@
 digraph {
   size="6,6";
   rankdir="LR";
-    0 -> 1[label="2",weight="2"];
-    0 -> 2[label="3",weight="3"];
-    0 -> 3[label="3",weight="3"];
-    1 -> 2[label="4",weight="4"];
-    1 -> 4[label="3",weight="3"];
-    2 -> 3[label="5",weight="5"];
-    2 -> 4[label="1",weight="1"];
-    2 -> 5[label="6",weight="6"];
-    3 -> 5[label="7",weight="7"];
-    4 -> 5[label="8",weight="8"];
-    5 -> 6[label="9",weight="9"];
+    0 -> 1[label="2",weight="2", arrowhead=none];
+    0 -> 2[label="3",weight="3", arrowhead=none];
+    0 -> 3[label="3",weight="3", arrowhead=none];
+    1 -> 2[label="4",weight="4", arrowhead=none];
+    1 -> 4[label="3",weight="3", arrowhead=none];
+    2 -> 3[label="5",weight="5", arrowhead=none];
+    2 -> 4[label="1",weight="1", arrowhead=none];
+    2 -> 5[label="6",weight="6", arrowhead=none];
+    3 -> 5[label="7",weight="7", arrowhead=none];
+    4 -> 5[label="8",weight="8", arrowhead=none];
+    5 -> 6[label="9",weight="9", arrowhead=none];
 }
