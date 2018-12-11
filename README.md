@@ -13,11 +13,11 @@ python src/prim.py path/to/file
 ### Weighted Undirected Graph
 Example:
 
-Graph
+**Graph**
 
 ![Graph image](/img/graph1.png)
 
-WUG File:
+**WUG File:**
 
 `(node) (node) (distance)`
 ```
@@ -31,7 +31,7 @@ WUG File:
 2 5 6
 3 5 7
 4 5 8
-6 7 9
+5 6 9
 ```
 
 ### License
