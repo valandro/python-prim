@@ -2,23 +2,36 @@ from sys import argv
 import re
 
 file = open(argv[1], "r")
-# n = number max of nodes
-nodes = 9
-# m = number of arrests per node
-arrests = (nodes - 1)
-# Initialize graph array
-graph = [[] * arrests] * nodes
-# [[{'2', '5'}],[{'1', '6'}]]
-# Each position of list is the node, and the structure is 'key' == node and 'value' == distance
-# Reading all file into a arrays of arrays
-graph = []
+# The greatest node is equal to number of nodes - 1
+greatest_node = -1
 for line in file:
     # Reading only lines there are not comments
     if not re.match("//", line):
         info = line.split(" ")
-        # Remove \n of end of line
+        # Find the number of nodes
+        if int(info[0]) > greatest_node:
+            greatest_node = int(info[0])
+        if int(info[1]) > greatest_node:
+            greatest_node = int(info[1])            
+
+# n = number max of nodes
+nodes = greatest_node + 1
+file.close()
+
+# Graph list
+graph = []
+file = open(argv[1], "r")
+for line in file:
+    # Reading only lines there are not comments
+    if not re.match("//", line):
+        info = line.split(" ")
+        # Create JSON and remove \n of end of line
         arrest = {info[0] + "&" +info[1]: info[2].replace('\n', '')}
-        # If array is empty, so initalize them and append
+        if int(info[0]) > greatest_node:
+            greatest_node = int(info[0])
+        if int(info[1]) > greatest_node:
+            greatest_node = int(info[1])            
+        # Add JSON to graph
         graph.append(arrest)
 
 # Set MST with a random value
