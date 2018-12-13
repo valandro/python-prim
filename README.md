@@ -11,14 +11,13 @@ python src/prim.py examples/graph1.wug
 ```
 
 ### Weighted Undirected Graph
-Example:
+Examples:
 
 **Graph 1**
 
 ![Graph image](/img/graph1.png)
 
 **graph1.wug**
-
 
 ```
 (node) (node) (distance)
@@ -34,6 +33,22 @@ Example:
 4 5 8
 5 6 9
 ```
+
+**Graph 2**
+
+![Graph image](/img/graph2.png)
+
+**graph2.wug**
+
+```
+(node) (node) (distance)
+0 3 4
+0 1 5
+1 2 3
+3 1 2
+3 2 6
+```
+
 
 ### License
 MIT License. [Click here for more information.](LICENSE)

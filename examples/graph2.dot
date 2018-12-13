@@ -1,0 +1,9 @@
+digraph {
+  size="6,6";
+  rankdir="RL";
+    0 -> 1[label="4",weight="4", arrowhead=none];
+    0 -> 3[label="5",weight="5", arrowhead=none];
+    1 -> 2[label="3",weight="3", arrowhead=none];
+    3 -> 1[label="2",weight="2", arrowhead=none];
+    3 -> 2[label="6",weight="6", arrowhead=none];
+}
