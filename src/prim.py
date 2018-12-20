@@ -1,23 +1,8 @@
 from sys import argv
 import re
 
-file = open(argv[1], "r")
 # The greatest node is equal to number of nodes - 1
 greatest_node = -1
-for line in file:
-    # Reading only lines there are not comments
-    if not re.match("//", line):
-        info = line.split(" ")
-        # Find the number of nodes
-        if int(info[0]) > greatest_node:
-            greatest_node = int(info[0])
-        if int(info[1]) > greatest_node:
-            greatest_node = int(info[1])            
-
-# n = number max of nodes
-nodes = greatest_node + 1
-file.close()
-
 # Graph list
 graph = []
 file = open(argv[1], "r")
@@ -33,7 +18,9 @@ for line in file:
             greatest_node = int(info[1])            
         # Add JSON to graph
         graph.append(arrest)
-
+        
+# n = number max of nodes
+nodes = greatest_node + 1
 # Set MST with a random value
 # List with the result
 prim = []
@@ -54,12 +41,10 @@ while i < nodes:
                 #If closest distance is empty, then
                 if len(min_dist) == 0:
                     min_dist = graph[node]
-                #If the node is before then min_dist node
-
+                #If the node distance is smaller than min_dist
                 elif int(list(graph[node].values())[0]) < int(list(min_dist.values())[0]):
                         min_dist = graph[node]
     # Append
-    
     if min_dist:
         prim.append(min_dist)
         if list(min_dist.keys())[0].split("&")[0] not in added:
