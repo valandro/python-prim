@@ -41,30 +41,33 @@ prim = []
 min_dist = {}
 # List of added nodes
 added = []
-# Add arbitary the first element
-prim.append(graph[0])
-# Add the nodes on added list
+# Add the arbitray first node on added list
 added.append(list(graph[0].keys())[0].split("&")[0])
-added.append(list(graph[0].keys())[0].split("&")[1])
 i = 0
 while i < nodes:
     for node in range(len(graph)):
             n = list(graph[node].keys())[0].split("&")
             # Filter the nodes that can be added
             # At lest n[0] or n[1] must be added to this node be a candidate
-            # And one of them must be not added before 
+            # And one of them must be not added before
             if (n[0] in added or n[1] in added) and (n[0] not in added or n[1] not in added):
                 #If closest distance is empty, then
                 if len(min_dist) == 0:
                     min_dist = graph[node]
                 #If the node is before then min_dist node
-                elif list(graph[node].values())[0] < list(min_dist.values())[0]:
+
+                elif int(list(graph[node].values())[0]) < int(list(min_dist.values())[0]):
                         min_dist = graph[node]
     # Append
+    
     if min_dist:
         prim.append(min_dist)
-        added.append(list(min_dist.keys())[0].split("&")[0])
-        added.append(list(min_dist.keys())[0].split("&")[1])
+        if list(min_dist.keys())[0].split("&")[0] not in added:
+            added.append(list(min_dist.keys())[0].split("&")[0])
+        
+        if list(min_dist.keys())[0].split("&")[1] not in added:
+            added.append(list(min_dist.keys())[0].split("&")[1])
+            
     # Reset variable
     min_dist = {}
     # Look for next node
