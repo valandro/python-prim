@@ -49,7 +49,6 @@ added.append(list(graph[0].keys())[0].split("&")[1])
 i = 0
 while i < nodes:
     for node in range(len(graph)):
-            # If isn't in prim array and is the lookup node, then
             n = list(graph[node].keys())[0].split("&")
             # Filter the nodes that can be added
             # At lest n[0] or n[1] must be added to this node be a candidate
