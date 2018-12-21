@@ -7,7 +7,7 @@ In computer science, `Prim's` (also known as Jarník's) algorithm is a greedy al
 ### Running
 
 ```
-python src/prim.py examples/graph1.wug
+python src/prim.py examples/*.wug
 ```
 
 ### Weighted Undirected Graph
@@ -16,8 +16,6 @@ Examples:
 **Graph 1**
 
 ![Graph image](/img/graph1.png)
-
-**graph1.wug**
 
 ```
 (node) (node) (distance)
@@ -38,8 +36,6 @@ Examples:
 
 ![Graph image](/img/graph2.png)
 
-**graph2.wug**
-
 ```
 (node) (node) (distance)
 0 3 4
@@ -49,6 +45,24 @@ Examples:
 3 2 6
 ```
 
+**Graph 3**
+
+![Graph image](/img/graph3.png)
+
+```
+(node) (node) (distance)
+0 1 7
+0 3 5
+1 3 9
+1 2 8
+1 4 7
+2 4 5
+3 4 15
+3 5 6
+4 5 8
+4 6 9
+5 6 11
+```
 
 ### License
 MIT License. [Click here for more information.](LICENSE)
